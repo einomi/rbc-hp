@@ -1,0 +1,36 @@
+@import 'lib/base'
+
+.pager
+	position: absolute
+	bottom: -50px
+	left: 50%
+	transform: translateX(-50%)
+	&__items
+		font-size: 0
+		text-align: center
+	&__item
+		position: relative
+		display: inline-block
+		width: 160px
+		height: 100px
+		margin: 0 14px
+		cursor: pointer
+		border-radius: 2px
+		+cover
+		&:hover
+			&:before
+				opacity: 0.1
+		&:before
+			+b
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background-color: $color-main
+			opacity: 0
+			transition: opacity 0.35s ease-in-out
+			border-radius: 2px
+		&._active
+			@extend .no-pe
+			&:before
+				opacity: 0.5

@@ -1,0 +1,41 @@
+@import lib/base
+@import fonts
+@import reset
+@import layout
+// @import controls
+@import footer
+// @import popup
+
+.logo
+	width: 55px
+	height: 55px
+	background-image: inline("../img/logo.svg")
+	+cover
+
+.button
+	@extend .animated
+	display: block
+	border-radius: 2px
+	border: 1px solid #ffffff
+	width: 160px
+	height: 50px
+	font-size: 16px
+	line-height: 48px
+	margin-right: auto
+	margin-left: auto
+	cursor: pointer
+	text-transform: uppercase
+	+box
+	&:hover
+		background-color: #fff
+		color: lighten(#000, 10)
+		
+.cpu-right
+	position: relative
+	&__image
+		position: absolute
+		right: 20px
+		top: 20px
+		background-image: url("/media/img/cpu.png")
+		width: 60px
+		height: 60px

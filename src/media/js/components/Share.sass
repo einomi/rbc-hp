@@ -1,0 +1,97 @@
+@import "lib/_base"
+
+.share
+	&__container
+		display: inline-block
+		vertical-align: middle
+	&__toggle
+		@extend .animated
+		display: inline-block
+		vertical-align: middle
+		width: 27px
+		height: 33px
+		fill: $color-main
+		cursor: pointer
+		margin-left: 20px
+		&:hover
+			fill: rgba(#000, 0.1)
+		&._active
+			fill: rgba(#000, 0.1)
+		
+.ya-share2
+	&__container
+		margin: 0 -5px !important
+		&_size
+			&_m
+				.ya-share2__icon
+					background: no-repeat center center !important
+					//width: 28px !important
+					//height: 28px !important
+	&__item
+		opacity: 1
+		margin: 0 5px !important
+		display: inline-block !important
+		opacity: 0
+		visibility: hidden
+		&:hover
+			.ya-share2__badge
+				background-color: $color-main !important
+				transition: none
+		&_service
+			&_collections
+				display: none !important
+			&_vkontakte
+				&:hover
+					.ya-share2__badge
+						&:before
+							background-image: inline("share/vkontakte-hover.svg") !important
+				.ya-share2__badge
+					&:before
+						width: 19px
+						height: 11px
+						background-image: inline("share/vkontakte.svg")
+			&_facebook
+				&:hover
+					.ya-share2__badge
+						&:before
+							background-image: inline("share/facebook-hover.svg") !important
+				.ya-share2__badge
+					&:before
+						width: 8px
+						height: 15px
+						background-image: inline("share/facebook.svg")
+			&_twitter
+				&:hover
+					.ya-share2__badge
+						&:before
+							background-image: inline("share/twitter-hover.svg") !important
+				.ya-share2__badge
+					&:before
+						width: 19px
+						height: 16px
+						background-image: inline("share/twitter.svg")
+			&_gplus
+				&:hover
+					.ya-share2__badge
+						&:before
+							background-image: inline("share/google-plus-hover.svg") !important
+				.ya-share2__badge
+					&:before
+						width: 20px
+						height: 14px
+						background-image: inline("share/google-plus.svg")
+	&__badge
+		@extend .animated
+		background-color: #fff !important
+		width: 32px
+		height: 32px
+		border-radius: 2px !important
+		box-shadow: 0px 5px 5px 0px rgba(#000, 0.1)
+		&:before
+			+b
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			+cover
+	&__icon
+		display: none !important

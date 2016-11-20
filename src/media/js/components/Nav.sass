@@ -1,0 +1,26 @@
+@import "lib/_base"
+
+.nav
+	position: relative
+	font-size: 0
+	//margin: 0 -18px
+	text-align: center
+	&__item
+		@extend .animated
+		display: inline-block
+		vertical-align: top
+		font-size: 16px
+		margin: 0 18px
+		height: $header-height
+		$parent: &
+		+unselectable
+		&-link
+			cursor: pointer
+			+vertical-align($parent)
+			&:hover
+				color: $color-main
+	&__line
+		position: absolute
+		bottom: 0
+		height: 6px
+		background-color: $color-main
