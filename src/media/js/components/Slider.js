@@ -20,25 +20,21 @@ export default class Slider extends React.Component {
 		this._initSlideWidth();
 	}
 
-	// componentDidUpdate() {
-	// }
-
 	_update() {
 		this._initSlideWidth();
-		this.setSlide(this.state.currentSlideID, true);
+		this.setSlide(this.state.currentSlideID, true, true);
 	}
 
 	_initSlideWidth() {
 		this.slideWidth = ReactDOM.findDOMNode(this).offsetWidth;
 	}
 
-	setSlide(slideID, immediate) {
-		if (slideID == this.state.currentSlideID) {
+	setSlide(slideID, immediate, forced) {
+		if (slideID == this.state.currentSlideID && !forced) {
 			return;
 		}
 
 		let x = -(this.slideWidth * (slideID));
-
 
 		if (!immediate) {
 			var timeline = new TimelineMax();
